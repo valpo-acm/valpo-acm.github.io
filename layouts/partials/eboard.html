@@ -1,15 +1,60 @@
 <section id="eboard">
     <h2>Valpo ACM E-Board Members</h2>
-    <div id="eboard-cards">
+    <div class="card-container">
         {{ range .Site.Data.eboard.members }}
         <div class="eboard-card" id="eboard-{{ .position | urlize }}">
-            <img src="eboard/{{ .name | urlize }}.webp" alt="Profile photo of {{ .name }}" width="200px"/>
-            <h3>{{ .position}}<br>{{ .name }}</h3>
-            {{ if gt (len .major) 0 }}
-            <p>Major{{ if gt (len .major) 1 }}s{{ end }}: {{ delimit .major " & " }}</p>
-            {{ end }}
-            <p><a target="_blank" href="{{ .git }}">Git Profile</a></p>
+            <div class="photo">
+                {{ $name := .name | urlize }}
+                {{ $imgSrc := "" }}
+                {{ if fileExists (printf "static/eboard/%s.webp" $name) }}
+                    {{ $imgSrc = printf "eboard/%s.webp" $name }}
+                {{ else if fileExists (printf "static/eboard/%s.png" $name) }}
+                    {{ $imgSrc = printf "eboard/%s.png" $name }}
+                {{ else }}
+                    {{ $imgSrc = printf "eboard/%s.jpg" $name }}
+                {{ end }}                     
+                <img id="eboard-photo" src="{{ $imgSrc }}" alt="Profile photo of {{ .name }}"/>
+            </div>
+            <div class="info">
+                <h3 class="roleandname">
+                    <div class="position">
+                        {{ .position  }}
+                    </div>
+                    <div class="name">
+                        {{ if eq .position "Advisor" }}
+                            Professor {{ .name }}
+                        {{ else }}
+                            {{ .name }}
+                        {{ end }}
+                    </div>
+                </h3>
+
+                {{ if gt (len .major) 0 }}
+                    <p class="major">
+                        <strong style="font-style: italic;">
+                            Major{{ if gt (len .major) 1 }}s{{ end }}: 
+                        </strong>
+                        {{ delimit .major " & " }}
+                    </p>
+                {{ end }}
+            </div>
+            <div class="social-links">
+                {{ if .git }}
+                <a target="_blank" href="{{ .git }}" class="personal" id="github">
+                    <i class="bi bi-github" style="font-size: 24px;"></i>
+                    <p style="font-size: 18px;">GitHub</p>
+                </a>
+                {{ end }}
+                {{ if .linkedin }}
+                <a target="_blank" href="{{ .linkedin }}"  class="personal" id="linkedin">
+                    <i class="bi bi-linkedin" style="font-size: 24px;"></i>
+                    <p style="font-size: 18px;">LinkedIn</p>
+                </a>
+                {{ end }}
+            </div>
         </div>
         {{ end }}
     </div>
+    <div class="eboard-pagination"></div>
 </section>
+<script src="javascript/eboard-pagination.js"></script>

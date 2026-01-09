@@ -1,0 +1,214 @@
+@media (min-width: 769px) {
+    .card-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 100px;
+        justify-content: center;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+
+
+.eboard-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 15px;
+    background-color: #DAD9D6;
+    padding: 10px;
+    min-height: 575px;
+    max-height: 650px;
+}
+
+.eboard-card:hover {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.photo {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    padding-top: 20px;
+}
+
+#eboard-photo {
+    width: 250px;
+    height: auto;
+    max-height: 350px;
+    border: 1px solid black;
+}
+
+.name {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: larger;
+}
+
+.position {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: xx-large;
+    border-bottom: 3px solid #C76917;
+    margin-bottom: 5px;
+}
+
+.roleandname {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.major {
+    padding: 10px 0 0 0;
+    margin: 0;
+    font-size: large;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 5px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+    height: max-content;
+    margin: 0 7.5%;
+}
+
+.personal {
+    column-gap: 10px;
+    min-width: fit-content;
+    height: 40px;
+    border-radius: 25px;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin: 0 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    text-decoration: none;
+    color: black;
+}
+
+.personal#github {
+    background-color: #BFFFD1;
+}
+
+.personal#github:hover {
+    background-color: #5FED83;
+    color: black;
+}
+
+.personal#linkedin{
+    background-color: #68C7EC;
+    
+}
+
+.personal#linkedin:hover {
+    background-color: #00A0DC;
+    color: black;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 5px;
+    padding-bottom: 20px;
+    margin: 0 5px 5px 5px;
+    width: 100%;
+    height: fit-content;
+}
+
+@media (max-width: 768px) {
+    .card-container {
+        display: flex;
+        flex-wrap: none;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+        padding: 0 5% 0 5%;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        height: fit-content;
+        scrollbar-width: none;  
+        -ms-overflow-style: none;  
+    }
+
+    .card-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .card-container::before {
+        content: '';
+        padding-left: 5%;
+    }
+    .card-container::after {
+        content: '';
+        padding-right: 5%;
+    }
+
+    .eboard-card {
+        flex-shrink: 0;
+        scroll-snap-align: center;
+        justify-content: center;
+        width: 80%;
+        margin: 0;
+        max-width: 285px;
+        min-height: 400px;
+        max-height: 500px;
+    }
+
+    #eboard-photo {
+        width: 200px;
+    }
+
+    .info {
+        max-height: 130px;
+    }
+
+    .eboard-carousel-wrapper {
+        width: 100%;
+        position: relative;
+    }
+
+    .eboard-pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        margin-top: 20px;
+        padding: 10px 0;
+    }
+
+    .eboard-pagination-dot {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background-color: #ccc;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    .eboard-pagination-dot.active {
+        background-color: black;
+        width: 24px;
+        height: 18px;
+        border-radius: 40%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+}

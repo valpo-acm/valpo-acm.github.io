@@ -1,42 +1,13 @@
 {
-    "term": "Spring 2024",
+    "term": "Spring 2026",
     "events": [
         {
-            "title": "Your Online Profile and You",
-            "location": "GEM 125",
-            "datetime": "2024-01-29 18:00:00 -0600",
-            "slides": "https://drive.google.com/drive/folders/1VoPvLK5GD7Y49ukwmYXIde386qGeqS7N?usp=sharing"
-        },
-        {
-            "title": "Talk with Prof. Venstrom on Modeling",
-            "location": "GEM 125",
-            "datetime": "2024-02-12 19:00:00 -0600"
-	        
-        },
-        {
-            "title": "Electives Night",
-            "location": "GEM 125",
-            "datetime": "2024-02-26 18:00:00 -0600"
-        },
-        {
-            "title": "IEEE Presents: Talk with Drew Simmons about Bungie and Gaming",
-            "location": "GEM 137",
-            "datetime": "2024-03-21 19:00:00 -0600"
-        },
-        {
-            "title": "Talk with Profs. Catisti and Bognar on Music and AI",
+            "title": "Fruitful Voids and Gardens of Forking Paths: Interactive Narratives in Games",
+            "guest": "Featuring Professor Buinicki",
             "location": "TBD",
-            "datetime": "2024-04-15 18:00:00 -0600"
-        },
-        {
-            "title": "Code Golf",
-            "location": "GEM 125",
-            "datetime": "2024-04-16 18:00:00 -0600"
-        },
-        {
-            "title": "Tech Tour",
-            "location": "TBD",
-            "datetime": "2024-01-01 00:00:00 -0600"
+            "date": "TBD",
+            "time": "TBD",
+            "description": "Let's discuss similarities and differences between traditional storytelling and game narratives, including the importance of branching storylines and player agency."
         }
     ]
 }

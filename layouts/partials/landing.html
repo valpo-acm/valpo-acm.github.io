@@ -1,0 +1,42 @@
+<section id="home">
+    <h2>Association for Computing Machinery - Valparaiso University</h2>
+    <div class="mission">
+        <h3 style="font-weight: bold;">Our Mission</h3>
+        <p class="mission-statement">The Valparaiso University Association for Computing Machinery (ACM) student chapter advances computing as both a science and a profession, guided by the highest professional and ethical standards. We align our chapter’s activities with the mission of the international ACM society, fostering the exchange of knowledge and collaboration among students.</p>
+    </div>
+    <div class="activities">
+        <h3 style="font-weight: bold;">What we do</h3>
+        <p class="activity-description">We bring students together through events that explore computing in all its forms — from coding challenges and hackathons to interdisciplinary talks and community outreach.</p>
+        <div class="activity-container">
+            {{ range .Site.Data.activity.activity }}
+            <div class="activity-card">
+                <div class="activity-header">
+                    <span>{{ .title }}</span>
+                    <i class="{{ .icon }}" style="font-size: x-large;"></i>
+                </div>
+                <p>
+                    <strong style="font-style: italic;">
+                        Description: 
+                    </strong>
+                    {{ .description }}
+                </p>
+                <p>
+                    <strong style="font-style: italic;">
+                        Events:
+                    </strong>
+                    {{ $examples := .examples }}
+                    {{ range $index, $event := $examples }}
+                        {{ if lt (add $index 1) (len $examples) }}
+                            {{ .eventName }},
+                        {{ else }}
+                            {{ .eventName }}
+                        {{ end }}
+                    {{ end }}
+                </p>
+            </div>
+            {{ end }}
+        </div>
+        <div class="activity-pagination"></div>
+    </div>
+</section>
+<script src="javascript/activity-pagination.js"></script>

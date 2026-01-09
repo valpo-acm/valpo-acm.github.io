@@ -1,0 +1,43 @@
+<div class="project-card" id="project-{{ .title | urlize }}">
+    <div class="project-photo">
+        {{ $name := .title | urlize }}
+        {{ $imgSrc := "" }}
+        {{ if fileExists (printf "static/projects/%s.webp" $name) }}
+            {{ $imgSrc = printf "projects/%s.webp" $name }}
+        {{ else if fileExists (printf "static/projects/%s.png" $name) }}
+            {{ $imgSrc = printf "projects/%s.png" $name }}
+        {{ else }}
+            {{ $imgSrc = printf "projects/%s.jpg" $name }}
+        {{ end }}    
+        <img src="{{ $imgSrc }}" alt="Photo of the {{ .name }} project" />
+    </div>
+    <div class="project-info">
+        <h3 class="project-name">
+            {{ .title }}
+        </h3>
+        <div class="contributors">
+            <span id="header">
+                Contributors
+            </span>
+            {{ range $index, $contributor := .contributors }}
+                {{ if lt (add $index 1) (len $.contributors) }}
+                    {{ .name }},
+                {{ else }}
+                    {{ .name }}
+                {{ end }}
+            {{ end }}
+        </div>
+        <div class="project-description">
+            <span id="header">
+                Project Description
+            </span>
+            {{ .description }}
+        </div>
+        <div>
+            <a class="github-project" target="_blank" href="{{ .github }}">
+                <i class="bi bi-github"></i>
+                GitHub
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+body {
+    font-family: sans-serif;
+    background-color: #eeeeee;
+    margin-top: 78px;
+}
+
+header {
+    display: flex;
+}
+
+h2 {
+    font-family: serif;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    color: #C76917;
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+section {
+    padding-top: 15px;
+    padding-bottom: 100px;
+}
+
+img {
+    display: block;
+    border-radius: 10px;
+}
+
+h3 {
+    color: #5C3000;
+    font-size: x-large;
+    text-align: center;
+}
+
+#constitution {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+html {
+    scroll-padding-top: 85px;
+    scroll-behavior: smooth;
+}
+
+button {
+    display: inline-flex;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    border: none;
+    transition: background 2ms;
+}
